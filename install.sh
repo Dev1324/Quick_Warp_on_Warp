@@ -162,7 +162,7 @@ echo "${GREEN}successfully generated ipv4 endip list${RESET}"
 echo "${GREEN}successfully create result.csv file${RESET}"
 echo "${CYAN}Now we're going to process result.csv${RESET}"
 process_result_csv $temp_var
-rm -rf ip.txt warpendpoint result.csv
+
 exit
 }
 
