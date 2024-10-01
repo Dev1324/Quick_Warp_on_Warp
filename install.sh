@@ -7,7 +7,10 @@ CYAN=$(tput setaf 6)
 RED=$(tput setaf 1)
 RESET=$(tput sgr0)
 
-touch result.csv
+if [ ! -f "./result.csv" ]; then
+    echo "The result.csv file does not exist, creating the file..."
+    touch result.csv
+fi
 
 get_values() {
 
