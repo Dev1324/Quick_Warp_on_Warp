@@ -72,7 +72,7 @@ endipresult(){
     
     if [ ! -f "./result.csv" ]; then
         echo "${RED}Error: result.csv file not found!${RESET}"
-        exit 1
+        touch result.csv
     fi
     
     process_result_csv $temp_var
