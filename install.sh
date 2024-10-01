@@ -158,8 +158,12 @@ endipresult(){
 temp_var=$1
 echo ${temp[@]} | sed -e 's/ /\n/g' | sort -u > ip.txt
 ulimit -n 102400
-chmod +x warpendpoint
-./warpendpoint
+chmod +x warpendpoint >/dev/null 2>&1
+if command -v warpendpoint &>/dev/null; then
+	warpendpoint
+else
+	./warpendpoint
+fi
 clear
 echo "${GREEN}successfully generated ipv4 endip list${RESET}"
 echo "${GREEN}successfully create result.csv file${RESET}"
