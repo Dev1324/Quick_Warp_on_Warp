@@ -7,10 +7,8 @@ CYAN=$(tput setaf 6)
 RED=$(tput setaf 1)
 RESET=$(tput sgr0)
 
-if [ ! -f "./result.csv" ]; then
-    echo "The result.csv file does not exist, creating the file..."
-    touch result.csv
-fi
+touch result.csv
+
 get_values() {
 
     local api_output=$(curl -sL "https://api.zeroteam.top/warp?format=sing-box")
